@@ -1,0 +1,41 @@
+<!--COMO LINKAR OBJETOS DEL FORMULARIO A LAS PROPIEDADES DE MI CLASE-->
+<h4>Agregar Personaje</h4>
+<form class = "row" (ngSubmit)="enviarCharacter()"> 
+
+   <!--oneway binding En este ejemplo lo que hay en la propiedad se refleja en el input pero no a la inversa
+   <input 
+   type="text" 
+   [value]="character.name" 
+   placeholder="Nombre" 
+   class="form-control mb-2"> -->
+   
+   <!-- 2way binding-->
+   <input 
+   type="text" 
+   [(ngModel)]="character.name" 
+   placeholder="Nombre" 
+   class="form-control mb-2"
+   name = "txtNombre"> 
+
+   <!--[(ngModel hace los mismo que la linea anterior lo que hay en el input tambien se refleja automaticamente en la variable de nuestra clase, ademas usando la directiva de angular)] y requiere importar la libreria en dbz.module.ts
+   ngModel además requiere la etiqueta "name" para identificar el control-->
+   <input 
+   type="number" 
+   [(ngModel)]="character.power" 
+   placeholder="Poder" 
+   class="form-control mb-2"
+   name = "txtPoder">
+   
+   <!--<button type="submit" class ="btn btn-primary" (click) = "enviarCharacter()">Agregar</button>-->
+   <button type="submit" class ="btn btn-primary">Agregar</button>
+   <!--<button type="button" class ="btn btn-secondary" (click) = "comprobarArray()">Comprobar</button> -->
+   <!--<span> {{character | json}}</span>-->
+</form>
+
+<!--
+<h1>antes de form"</h1>
+<form class = "row">
+   <h1>hola</h1>
+
+</form>
+-->

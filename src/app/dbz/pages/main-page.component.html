@@ -1,0 +1,17 @@
+<h1>dbz works!</h1>
+<hr>
+<!-- cuando usamos [characterList] quiere decir el corchete que lo que hay dentro es una propiedad-->
+<!-- cuando usamos() lo que hay dentro es un evento-->
+<div class = "row">
+    <div class = "col-md-4">
+        <!--Primero pasamos como parametro nuestro DbzServ.characters a su variable characterList y luego escuchamos el evento para eliminar un personaje-->
+        <dbz-list [characterList]="characters" (onDeleteCharacter)="manejaEventoEliminarCharacter($event)" ></dbz-list> <!--le paso como parametro a dbz-list un array de personajes, definidos en interfaces-->
+    </div>
+    <div class = "col">
+        <dbz-add-character (onNewCharacter)="manejaEventoaddNewCharacter($event)"></dbz-add-character>
+    </div>
+    <div class = "col">
+         <h3>Col 3</h3>
+    </div>
+</div> 
+
